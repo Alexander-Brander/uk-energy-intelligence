@@ -1,0 +1,40 @@
+# Data handling
+pandas>=2.0
+numpy>=1.24
+
+# Data fetching
+requests>=2.31
+aiohttp>=3.9
+
+# Forecasting
+scikit-learn>=1.4
+xgboost>=2.0
+prophet>=1.1
+
+# Visualization
+matplotlib>=3.8
+seaborn>=0.13
+plotly>=5.18
+
+# RAG pipeline
+chromadb>=0.4
+sentence-transformers>=2.3
+langchain>=0.1
+langchain-community>=0.0.10
+
+# LLM
+anthropic>=0.40
+
+# PDF processing
+pymupdf>=1.23
+pypdf>=3.17
+
+# Web UI
+streamlit>=1.30
+
+# Utilities
+python-dotenv>=1.0
+tqdm>=4.66
+
+# Testing
+pytest>=7.4
