@@ -68,7 +68,7 @@ uk-energy-intelligence/
 | [NESO Data Portal](https://api.neso.energy) | Historic demand, generation mix | Half-hourly / Hourly | 2009-present |
 | [Carbon Intensity API](https://api.carbonintensity.org.uk) | Forecast vs actual carbon intensity | Half-hourly | 2024-present |
 | [Open-Meteo](https://open-meteo.com) | Temperature, wind, cloud cover, precipitation | Hourly | 2020-present |
-| [NESO Publications](https://www.neso.energy/publications) | Winter/Summer Outlooks, Reviews, FES reports | PDF documents | 2020-2025 |
+| [NESO Publications](https://www.neso.energy/) | Winter/Summer Outlooks, Reviews, FES reports | PDF documents | 2020-2025 |
 
 ## Setup
 
