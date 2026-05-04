@@ -29,8 +29,10 @@ anthropic>=0.40
 pymupdf>=1.23
 pypdf>=3.17
 
-# Web UI
+# Web UI / API
 streamlit>=1.30
+fastapi>=0.110
+uvicorn[standard]>=0.27
 
 # Utilities
 python-dotenv>=1.0

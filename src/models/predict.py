@@ -59,6 +59,18 @@ def split_date() -> pd.Timestamp:
     return SPLIT_DATE
 
 
+def model_info() -> dict:
+    _, feature_cols, df = _load()
+    return {
+        "model": "XGBoost peak-demand forecaster",
+        "earliest_date": df.index.min().date().isoformat(),
+        "latest_date": df.index.max().date().isoformat(),
+        "train_test_split_date": SPLIT_DATE.date().isoformat(),
+        "feature_count": len(feature_cols),
+        "test_metrics": {"MAE_MW": 784.9, "MAPE_pct": 2.46, "R2": 0.9611},
+    }
+
+
 if __name__ == "__main__":
     for d in ("2024-12-25", "2025-09-15", "2025-12-30"):
         print(predict_for_date(d))
