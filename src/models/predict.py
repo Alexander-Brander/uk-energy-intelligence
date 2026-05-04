@@ -59,6 +59,18 @@ def split_date() -> pd.Timestamp:
     return SPLIT_DATE
 
 
+@lru_cache(maxsize=1)
+def all_predictions() -> pd.DataFrame:
+    """Predict every date in the inference set, returning a DataFrame indexed by date."""
+    model, feature_cols, df = _load()
+    preds = model.predict(df[feature_cols])
+    out = df[["peak_demand"]].copy()
+    out["predicted"] = preds
+    out["error"] = out["predicted"] - out["peak_demand"]
+    out["abs_error_pct"] = (out["error"].abs() / out["peak_demand"]) * 100
+    return out
+
+
 def model_info() -> dict:
     _, feature_cols, df = _load()
     return {
