@@ -1,3 +1,14 @@
+---
+title: UK Energy Forecaster
+emoji: ⚡
+colorFrom: yellow
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+short_description: XGBoost peak-demand forecaster with backtest UI
+---
+
 # UK Energy Intelligence Assistant
 
 A data science project combining UK electricity demand forecasting with a RAG (Retrieval-Augmented Generation) pipeline over NESO/Ofgem energy reports. The system predicts next-day peak demand using machine learning and retrieves grounded explanations from official publications to explain anomalous demand patterns.
