@@ -23,6 +23,8 @@ The Phase 2 forecaster is deployed at **[huggingface.co/spaces/Alexander-Brander
 
 Stack: **FastAPI** (request/response contract) + **Streamlit** (UI) + **Docker**, deployed on **Hugging Face Spaces** (free CPU tier). The model is XGBoost serialized in the native JSON format for deployment portability. Source: `app.py`, `src/api/`, `src/models/`, `Dockerfile`.
 
+![Live demo screenshot](docs/images/screenshot.png)
+
 ## Key Results
 
 ### Demand Forecasting (Phase 2)
