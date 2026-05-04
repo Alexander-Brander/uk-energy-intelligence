@@ -151,7 +151,7 @@ chart = alt.layer(*layers).properties(
     height=420,
     padding={"top": 5, "right": 10, "bottom": 60, "left": 10},
 )
-st.altair_chart(chart, use_container_width=True)
+st.altair_chart(chart, width="stretch")
 st.caption(
     "Grey dashed line = selected date. Red dashed line (when visible) = train/test split. "
     "Hover for exact values."

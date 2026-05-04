@@ -1,0 +1,49 @@
+# Local Python environments
+.venv/
+venv/
+env/
+.env
+.env.example
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+.github/
+
+# Editor / tool state
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
+
+# Caches
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Raw and processed data — the deployed image only needs artifacts/
+data/
+
+# Project content not needed in the container
+notebooks/
+docs/
+tests/
+config/
+src/data/
+src/rag/
+src/visualization/
+src/features/
+src/api/
+
+# Dev-only requirements (the container uses requirements-deploy.txt)
+requirements.txt
+
+# Documentation lives in the repo, not the container
+README.md
+*.md
