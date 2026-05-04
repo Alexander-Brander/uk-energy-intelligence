@@ -11,9 +11,17 @@ short_description: XGBoost peak-demand forecaster with backtest UI
 
 # UK Energy Intelligence Assistant
 
+[![Try the live demo on Hugging Face Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-md.svg)](https://huggingface.co/spaces/Alexander-Brander/uk-energy-forecaster)
+
 A data science project combining UK electricity demand forecasting with a RAG (Retrieval-Augmented Generation) pipeline over NESO/Ofgem energy reports. The system predicts next-day peak demand using machine learning and retrieves grounded explanations from official publications to explain anomalous demand patterns.
 
 Built as a self-directed portfolio project to demonstrate end-to-end data science skills - from data sourcing and EDA through to ML forecasting and LLM-powered document intelligence.
+
+## Live Demo
+
+The Phase 2 forecaster is deployed at **[huggingface.co/spaces/Alexander-Brander/uk-energy-forecaster](https://huggingface.co/spaces/Alexander-Brander/uk-energy-forecaster)** — pick any date from the historical dataset and see the model's predicted peak demand alongside the actual recorded peak. Dates after 2025-07-04 are the genuine held-out evaluation; earlier dates are training set.
+
+Stack: **FastAPI** (request/response contract) + **Streamlit** (UI) + **Docker**, deployed on **Hugging Face Spaces** (free CPU tier). The model is XGBoost serialized in the native JSON format for deployment portability. Source: `app.py`, `src/api/`, `src/models/`, `Dockerfile`.
 
 ## Key Results
 
