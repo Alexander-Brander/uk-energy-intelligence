@@ -14,7 +14,6 @@ import json
 import shutil
 from pathlib import Path
 
-import joblib
 import numpy as np
 import pandas as pd
 from xgboost import XGBRegressor
@@ -71,7 +70,7 @@ def main() -> None:
     print(f"Test R2:   {metrics['R2']:.4f}")
 
     ARTIFACTS_DIR.mkdir(exist_ok=True)
-    joblib.dump(model, ARTIFACTS_DIR / "xgboost_forecaster.joblib")
+    model.save_model(str(ARTIFACTS_DIR / "xgboost_forecaster.json"))
     (ARTIFACTS_DIR / "feature_columns.json").write_text(json.dumps(feature_cols, indent=2))
     shutil.copy(PROCESSED_CSV, ARTIFACTS_DIR / "inference_features.csv")
     print(f"\nArtifacts written to {ARTIFACTS_DIR}")

@@ -12,11 +12,11 @@ import json
 from functools import lru_cache
 from pathlib import Path
 
-import joblib
 import pandas as pd
+from xgboost import XGBRegressor
 
 ARTIFACTS_DIR = Path(__file__).resolve().parents[2] / "artifacts"
-MODEL_PATH = ARTIFACTS_DIR / "xgboost_forecaster.joblib"
+MODEL_PATH = ARTIFACTS_DIR / "xgboost_forecaster.json"
 FEATURES_PATH = ARTIFACTS_DIR / "inference_features.csv"
 FEATURE_COLS_PATH = ARTIFACTS_DIR / "feature_columns.json"
 
@@ -25,7 +25,8 @@ SPLIT_DATE = pd.Timestamp("2025-07-04")
 
 @lru_cache(maxsize=1)
 def _load():
-    model = joblib.load(MODEL_PATH)
+    model = XGBRegressor()
+    model.load_model(str(MODEL_PATH))
     feature_cols = json.loads(FEATURE_COLS_PATH.read_text())
     df = pd.read_csv(FEATURES_PATH, parse_dates=["date"]).set_index("date").sort_index()
     return model, feature_cols, df
